@@ -32,7 +32,7 @@ To create the image, run the following goal:
 
 Then, you can run the app like any other container:
 ```
-docker run --rm -p 8080:8080 graalvm-cds:0.0.1-SNAPSHOT
+docker run -e MY_ENV=alow -p 8080:8080 java-app:1.0.0
 ```
 
 Image size: 351 MB

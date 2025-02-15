@@ -38,8 +38,8 @@ out/
 ### VS Code ###
 .vscode/
 
-graalvm-cds/.idea/**
-graalvm-cds/build/**
+java-app/.idea/**
+java-app/build/**
 
-graalvm-cds/build/**
-graalvm-cds/build/*
+java-app/build/**
+java-app/build/*

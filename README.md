@@ -5,6 +5,7 @@ This is the architecture view:
 - [ ] External name
 - [ ] Helm chart
 - [ ] Service Account
+- [ ] Sidecars
 - [ ] Create a kubernetes flow to understand each component
 - [ ] Create a customized component using kind and apiVersion
 

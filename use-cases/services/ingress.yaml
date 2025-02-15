@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: java-app-secret
+type: Opaque
+data:
+  MY_PRIVATE_KEY: TUlJRXZ3SUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2t3Z2dTbEFnRUFBb0lCQVFDNWtXRElFd2pOV3gzL3JCRm9TdVdsQ0NWbmQ5UDVZUWIrbHNBTDZ4R3MweUd5dGdPMHAxaFllNytQbjRNT29Zak5uQkdRUG80OEZmNHVycGlrWWptanh4d1RiZ0ZibDluV1h6Q2JSb2tsUnBTZXlUek1FbndVcGUxaHNhbSs3YjcvK1pwK3ZEci8xR1VkeXhYS0pFM2lHRk1kamF2bEVjK1k0M1VkcHN4VmthKzVwbGhUdktLREhIaDFSK0NoNk9ENGE2SGxoR2gycU9jTUdhQ1NrV2Noajd6cWo1NlhkUWZsa0NuNXRUV09tTXBodXE0LzFIQWRVOStxS0t6V28xWnUxYSs3ZTFtcUZTQlhpQ1ZjVWNGd3MyK0ZWZG1zQXdVd3gvQ01GeVF6bWtpeTJiWjUyN1A1aEhiRzBnNlQ5WVdxM2huSlFrOE50VVFXUUdhdHNnYnpBZ01CQUFFQ2dnRUFLQ3FOQ2RHQTZyNUp3SUVVcFgvc3RDdU91UllwVmtYSHQweVhGaDFVRHBZR3FjR1hETC9hTWhEYkZuSGU4c2hKTGNRVjB5U1BNZmRLdFAwS3dpNFdydG9XdkNmbitGVG1qRzIvUGlUbTQ2QWk1RG5IeEo1TnFFU0FITkRSWHFma1cxRENQYU50bTlsejU1NkJRV2RaU2xLY2p2Mk8wdjduY2Y3dDV6U203dkJDdWZUSUE5QTMxc2ZIOE1zZW9mekVMRlg2aHRFa1FoL0lCb1AveFIrTUVCNWNVWEo5L3pxMGVpK1Uzdm1iTnc2OVZvbTdBZ3VSMklmbktqQXcwUjlZTnMxNmJkQkNXTUY2b3hDdThZcmc3UCt6b0k4NmVZcWhhR2Fvb1FuUlA3cFFEMDNrZGpHZ3g4dTdSQnBOa05BV3Qva0J1emk1cWFHR3JrOFp2WlduMFFLQmdRRHJKZll3THgrNXZXRlVDN09VTTYrVWg2Nk92ZG9tbVhURG16SmNuR3RLL2FXK0tvQ2NuMWIybXhnaWFwU1dvL0NtcjZCdjBwWit1d2hXcmhrMnNUNWVZZDZMWUNCYllqSE43RmpoK0JyNFJOSlpOcnVpWFhiTHAvU2ZBSXhxNS9CN050MlhQT3hGTlhEVmZ0SnRuM3c3bFdleTgrZmY0N1lHbjdsRlhtZS84UUtCZ1FES0JlZW1qc2JmdG9pYmx6Ni8vOERlNmVzeUJMQU8wdEV2cmljd3ZWd0o3L05EWURuQWh6dDYwZ0c3cWNGdU9WVHRyNjdiVS9CeG1teXNsSExPMUpaOTQveTBpTzNCSEpIODVTTkRHVUJzWENiTzBkdWdGSnQwL1FrSzd5ajZieFp3SUkxNU9jL0ZPREtCc1pRMERQcHdkWFVTVTN0Uk5aUmN6Y3ZPT0VoWkl3S0JnUUNpcFNVOWVyckU3RHF2dVZCQ3grVkFKUUVWOWpjM3o1aTEyMWpnT2NqMG03RFNjZTkzWmJidTU2T3YybXhnTFpDOG1tbXNMc3F0YVl5QTkvYTBuNi8xOUZmTHEzZDEvZHRaQllzTThXRW1LK1FhbFFML2NRcEVIeTNSOUwwckRMYUhZeEd1RkJPUVkwQmlTMUFkUnR6VkVhZ2lYUlliQkJQWlRRMEc4Qjl1NFFLQmdRQzFUaGRYbzB0WCtya2U2ZDJtOGlCbDdnam1HczdtZnN5OXZjM3VNQU1wNSs2cHlQSUxsMUlLSis3bVBMTWIrTmYvZUd1MDZ1QWZGRGZ6cWtaZTJPczJrQ1Y2NEdoL3B1UmQwa2FUTVZaZjZWUHF5T3dSL215RjBaRUwveGNIcWlxNDluNEJEYUVwbmdXMTMyamlUY04wcWZVblBVU3UzU2NKSXFpRnFuMURnUUtCZ1FDQ2U2UzVUUTVUd3FwdjFybGZKRm5tSzlqUmFVN05lTis2a1h0V05yd0k3WXpuUDd6NGpwWGcvZVYrQTZKaXhUdEx2V2RFOEJBblUwOTVkbzJoNnVEOVIrNTRza1BXaDRGQ1A5QkpiSU9HYjl1bTNpNnBDSWFmelZkcGlFazFWVnFMZ1hkRVJsb2xhUFBnWkMzOUJWZnpBVGtHemREQU5qbDlwc014S050eVJBPT0=
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: java-app-config
+data:
+  MY_ENV: "value1"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app
+  labels:
+    app: java-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      containers:
+        - name: java-app
+          image: java-app:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: java-app-config
+          env:
+            - name: MY_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: java-app-secret
+                  key: MY_PRIVATE_KEY
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-app-service
+spec:
+  selector:
+    app: java-app
+  ports:
+    - port: 80
+      targetPort: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: java-app-ingress
+spec:
+  rules:
+    - host: java-app.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: java-app-service
+                port:
+                  number: 80
