@@ -2,12 +2,13 @@ This is the architecture view:
 ![kubernetes.jpg](images/kubernetes.jpg)
 
 ### Pending to study
-- [ ] External name
 - [ ] Helm chart
-- [ ] Service Account
+- [x] Service Account
 - [ ] Sidecars
 - [ ] Create a kubernetes flow to understand each component
 - [ ] Create a customized component using kind and apiVersion
+- [ ] Add another service to make api calls with traceId
+- [ ] Grafana and prometheus
 
 
 

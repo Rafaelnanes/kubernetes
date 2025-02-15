@@ -1,0 +1,30 @@
+# role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: my-apps
+  name: pod-viewer
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - "pods"
+    verbs:
+      - "get"
+      - "list"
+
+---
+# rolebinding.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rafael-pod-viewer
+  namespace: my-apps
+subjects:
+  - kind: User
+    name: rafael
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-viewer
+  apiGroup: rbac.authorization.k8s.io
