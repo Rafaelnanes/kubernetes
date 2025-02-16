@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app
+  namespace: my-apps
+  labels:
+    app: java-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      containers:
+        - name: alpine
+          image: alpine
+          command:
+            - sleep
+            - infinity
+        - name: java-app
+          image: java-app:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

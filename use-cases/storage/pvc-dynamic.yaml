@@ -1,0 +1,32 @@
+# pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard  # Using Minikube's default StorageClass
+
+---
+# pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine-pod
+spec:
+  containers:
+    - name: alpine
+      image: alpine
+      command: ["/bin/sh", "-c"]
+      args: ["echo rafael > /data/my-file.txt; tail -f /dev/null"]
+      volumeMounts:
+        - name: task-volume
+          mountPath: /data
+  volumes:
+    - name: task-volume
+      persistentVolumeClaim:
+        claimName: task-pvc

@@ -1,0 +1,47 @@
+# configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-file-config
+data:
+  my-file.txt: |
+    rafael
+
+---
+# pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard
+
+---
+# pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine-pod
+spec:
+  containers:
+    - name: alpine
+      image: alpine
+      command: ["/bin/sh", "-c"]
+      args: ["cp /config/my-file.txt /data/ && tail -f /dev/null"]
+      volumeMounts:
+        - name: task-volume
+          mountPath: /data
+        - name: config-volume
+          mountPath: /config
+  volumes:
+    - name: task-volume
+      persistentVolumeClaim:
+        claimName: task-pvc
+    - name: config-volume
+      configMap:
+        name: my-file-config

@@ -4,7 +4,7 @@ This is the architecture view:
 ### Pending to study
 - [ ] Helm chart
 - [x] Service Account
-- [ ] Sidecars
+- [x] Sidecars
 - [ ] Create a kubernetes flow to understand each component
 - [ ] Create a customized component using kind and apiVersion
 - [ ] Add another service to make api calls with traceId
