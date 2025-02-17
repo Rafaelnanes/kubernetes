@@ -1,16 +1,26 @@
-This is the architecture view:
-![kubernetes.jpg](images/kubernetes.jpg)
-
 ### Pending to study
 - [ ] Helm chart
-- [x] Service Account
-- [x] Sidecars
-- [ ] Create a kubernetes flow to understand each component
+- [ ] Service Mesh
 - [ ] Create a customized component using kind and apiVersion
-- [ ] Add another service to make api calls with traceId
+- [ ] Add another service to make api calls with traceId and only accepts https
 - [ ] Grafana and prometheus
 
+<details>
 
+<summary>This is the architecture overview</summary>
+
+![kubernetes.jpg](images/kubernetes.jpg)
+
+</details>
+
+
+<details>
+
+<summary>Deployment break down</summary>
+
+![deployment.jpg](images/deployment.png)
+
+</details>
 
 ---
 **⚠️ Important**  
@@ -42,7 +52,7 @@ minikube service java-app-service --url
 
 ---
 <details>
-<summary>Run graalvm-cds application</summary>
+<summary>Run java-app application</summary>
 
 ### Create docker image
 ``` 
