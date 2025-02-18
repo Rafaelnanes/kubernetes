@@ -1,9 +1,6 @@
 ### Pending to study
-- [ ] Helm chart
-- [ ] Service Mesh
 - [ ] Create a customized component using kind and apiVersion
-- [ ] Add another service to make api calls with traceId and only accepts https
-- [ ] Grafana and prometheus
+- [ ] Terraform
 
 <details>
 

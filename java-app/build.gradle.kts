@@ -30,5 +30,5 @@ tasks.withType<Test> {
 
 tasks.bootBuildImage {
 	builder = "paketobuildpacks/builder-jammy-base:latest"
-	imageName = "java-app:1.0.0"
+	imageName = "java-app:2.0.0"
 }

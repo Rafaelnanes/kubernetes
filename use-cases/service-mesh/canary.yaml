@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app-canary
+  labels:
+    app: java-app
+    version: canary
+spec:
+  replicas: 1  # Lower replica count for canary
+  selector:
+    matchLabels:
+      app: java-app
+      version: canary
+  template:
+    metadata:
+      labels:
+        app: java-app
+        version: canary
+      annotations:
+        kuma.io/mesh: default
+    spec:
+      containers:
+        - name: java-app
+          image: java-app:1.0.1  # New version
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

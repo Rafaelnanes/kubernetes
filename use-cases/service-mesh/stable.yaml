@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app-stable
+  labels:
+    app: java-app
+    version: stable
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: java-app
+        version: stable
+      annotations:
+        kuma.io/mesh: default
+    spec:
+      containers:
+        - name: java-app
+          image: java-app:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,38 @@
+apiVersion: kuma.io/v1alpha1
+kind: TrafficRoute
+metadata:
+  name: java-app-canary-route
+  namespace: default
+spec:
+  sources:
+    - match:
+        kuma.io/service: "*"
+  destinations:
+    - match:
+        kuma.io/service: java-app-service_default_svc_80
+  conf:
+    http:
+      split:
+        - weight: 80
+          destination:
+            kuma.io/service: java-app-service_default_svc_80
+            version: stable
+        - weight: 20
+          destination:
+            kuma.io/service: java-app-service_default_svc_80
+            version: canary
+
+---
+# Kuma Traffic Permission (required for communication)
+apiVersion: kuma.io/v1alpha1
+kind: TrafficPermission
+metadata:
+  name: java-app-permission
+  namespace: default
+spec:
+  sources:
+    - match:
+        kuma.io/service: "*"
+  destinations:
+    - match:
+        kuma.io/service: java-app-service_default_svc_80
