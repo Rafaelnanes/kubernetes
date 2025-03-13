@@ -1,2 +1,5 @@
 appName: java-app
 image: java-app:1.0.0
+
+application:
+  version: "1.0.0"
