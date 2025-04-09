@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}
+  name: {{ include "my-helm-app.fullname" . }}
+  labels:
+    app: {{ .Values.appName }}
 spec:
   replicas: 1
   selector:
